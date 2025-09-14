@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Expenses Management System</title>
+  <link rel="icon" href="./assets/icons8-business-management-50.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      background: linear-gradient(90deg, #ffb347, #ffcc33);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-link:hover {
+      color: #212529 !important;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 0.25rem;
+      transition: 0.3s ease;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, #FDB813, #FFA500);
+      min-height: 80vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-dark:hover {
+      background-color: #343a40;
+      transform: scale(1.05);
+    }
+
+    .card {
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .list-group-item {
+      border: none;
+      background: transparent;
+    }
+
+    footer {
+      background-color: #212529;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🌞 Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand text-white fw-bold" href="#">
+        <img src="./assets/efficiency-growth-icon-with-rupee.png" alt="Logo" style="height: 40px;" class="me-2">
+        Expenses Management
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="Home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#">Features</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="#">Contact</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold" href="Login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 🎯 Hero Banner -->
+  <section class="hero-section text-center">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Track. Save. Succeed. ☀️</h1>
+      <p class="lead mt-3">Your personal finance assistant to manage, save, and grow your money smartly.</p>
+      <a href="Register.html" class="btn btn-dark btn-lg mt-4 fw-bold shadow">Get Started Free 🚀</a>
+    </div>
+  </section>
+
+  <!-- 💡 Features Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center fw-bold text-warning mb-5">Why Choose Us?</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title">📊 Real-Time Tracking</h5>
+              <p class="card-text">Monitor all your expenses instantly with an intuitive dashboard.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title">📅 Smart Reminders</h5>
+              <p class="card-text">Get alerts before bills are due and control your spending habits.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title">🔒 Secure & Private</h5>
+              <p class="card-text">Your financial data is encrypted and 100% safe with us.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📈 Benefits Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold text-warning mb-4">What You Get</h2>
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <ul class="list-group list-group-flush fs-5">
+            <li class="list-group-item">✔️ Clean & easy-to-use dashboard</li>
+            <li class="list-group-item">✔️ Add unlimited expenses</li>
+            <li class="list-group-item">✔️ Monthly & yearly summaries</li>
+            <li class="list-group-item">✔️ Export data anytime</li>
+            <li class="list-group-item">✔️ Mobile responsive interface</li>
+          </ul>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="./assets/calculate-monthly-business-income-analysis_999616-573.jpg" alt="Expense Illustration" class="img-fluid"
+            style="max-height: 300px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📣 Call to Action -->
+  <section class="text-center py-5 text-white"
+    style="background: linear-gradient(90deg, #FFA500, #FDB813);">
+    <div class="container">
+      <h2 class="fw-bold mb-3">Start managing your expenses better today</h2>
+      <p class="lead">Join hundreds of users who’ve taken control of their financial future.</p>
+      <a href="register.html" class="btn btn-dark btn-lg mt-3 fw-bold shadow">Create Your Free Account</a>
+    </div>
+  </section>
+
+  <!-- 📥 Footer -->
+  <footer class="text-light pt-5">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-4">
+          <h5 class="fw-bold">Expenses Management</h5>
+          <p>Track your spending, save money, and achieve financial freedom.</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="fw-bold">Contact</h5>
+          <p>Email: <a href="mailto:support@expensestrack.com" class="text-warning">support@expensestrack.com</a></p>
+          <p>Phone: <a href="tel:+1234567890" class="text-warning">+1 234 567 890</a></p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="fw-bold">Follow Us</h5>
+          <a href="#" class="text-warning fs-4 me-3">📘</a>
+          <a href="#" class="text-warning fs-4 me-3">🐦</a>
+          <a href="#" class="text-warning fs-4 me-3">🔗</a>
+        </div>
+      </div>
+      <hr class="my-4 bg-light">
+      <p class="text-center mb-0 small">&copy; 2025 Expenses Management System | Made with ☀️</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

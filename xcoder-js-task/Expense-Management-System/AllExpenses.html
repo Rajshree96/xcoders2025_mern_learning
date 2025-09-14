@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ALL Expenses | Expenses Management System</title>
+
+    <link rel="icon" href="./assets/icons8-business-management-50.png" type="image/png">
+
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+
+<body onload="allexpenses()">
+
+    <!-- 🌞 Top Navbar -->
+    <nav class="navbar navbar-expand-lg"
+        style="background: linear-gradient(90deg, #FDB813, #FFA500); box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white fw-bold" href="#">
+                <img src="./assets/efficiency-growth-icon-with-rupee.png" alt="Sun Icon"
+                    style="height: 40px; width: auto; object-fit: contain;" class="d-inline-block align-text-top">
+                Expenses Management System
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSun"
+                aria-controls="navbarSun" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSun">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" style="font-weight: 500;">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" style="font-weight: 500;">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" style="font-weight: 500;">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link text-Dark" href="#" style="font-weight: 500;" id="logeduser-name"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🔄 Sidebar + Content -->
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- ✨ Sidebar -->
+            <!-- ✨ Stylish Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block collapse show" id="sidebar"
+                style="min-height: 100vh; background-color: #212529; color: #fff; padding-top: 1rem; box-shadow: 2px 0 6px rgba(0,0,0,0.1);">
+
+                <ul class="nav flex-column">
+
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" href="Dashboard.html"
+                            style="color: #f8f9fa; padding: 12px 20px; font-weight: 500; transition: background 0.3s;"
+                            onmouseover="this.style.backgroundColor='#343a40';"
+                            onmouseout="this.style.backgroundColor='transparent'">
+                            📊 <span style="margin-left: 10px;">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" href="AddExpenses.html"
+                            style="color: #f8f9fa; padding: 12px 20px; font-weight: 500; transition: background 0.3s;"
+                            onmouseover="this.style.backgroundColor='#343a40';"
+                            onmouseout="this.style.backgroundColor='transparent'">
+                            ➕ <span style="margin-left: 10px;">Add Expense</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" href="AllExpenses.html"
+                            style="color: #f8f9fa; padding: 12px 20px; font-weight: 500; transition: background 0.3s;"
+                            onmouseover="this.style.backgroundColor='#343a40';"
+                            onmouseout="this.style.backgroundColor='transparent'">
+                            📋 <span style="margin-left: 10px;">All Expenses</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" href="achievements.html"
+                            style="color: #f8f9fa; padding: 12px 20px; font-weight: 500; transition: background 0.3s;"
+                            onmouseover="this.style.backgroundColor='#343a40';"
+                            onmouseout="this.style.backgroundColor='transparent'">
+                            🏆 <span style="margin-left: 10px;">Achievements</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" href="faq.html"
+                            style="color: #f8f9fa; padding: 12px 20px; font-weight: 500; transition: background 0.3s;"
+                            onmouseover="this.style.backgroundColor='#343a40';"
+                            onmouseout="this.style.backgroundColor='transparent'">
+                            ❓ <span style="margin-left: 10px;">FAQs</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item mt-4 px-3">
+                        <button class="btn btn-warning w-100 fw-bold" onclick="logoutUser(event)" style="color: #000;">
+                            🚪 Logout
+                        </button>
+                    </li>
+
+                </ul>
+            </nav>
+
+
+            <!-- 🧾 Main Content Area -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+
+                <!-- 🧾 All Expense Form -->
+                <div class="container mt-2">
+                    <h2 class="text-center">Welcome to All Expenses-Track 🌞</h2>
+                    <p class="text-center">
+                        Shine bright with better expense tracking!
+                    </p>
+                </div>
+
+                <!-- User Expenses table -->
+                <section>
+                    <div class="row g-2 mb-3">
+                        <div class="col">
+                            <input type="number" id="filter-year" class="form-control" placeholder="Year (e.g., 2025)">
+                        </div>
+                        <div class="col">
+                            <select id="filter-month" class="form-control">
+                                <option value="">Month</option>
+                                <option value="0">Jan</option>
+                                <option value="1">Feb</option>
+                                <option value="2">Mar</option>
+                                <option value="3">Apr</option>
+                                <option value="4">May</option>
+                                <option value="5">Jun</option>
+                                <option value="6">Jul</option>
+                                <option value="7">Aug</option>
+                                <option value="8">Sep</option>
+                                <option value="9">Oct</option>
+                                <option value="10">Nov</option>
+                                <option value="11">Dec</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <input type="number" id="filter-day" class="form-control" placeholder="Day (1-31)">
+                        </div>
+                        <div class="col">
+                            <button onclick="allexpenses()" class="btn btn-dark w-100">Filter</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section style="overflow-x: auto;">
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Expense ID</th>
+                                <th scope="col">Expense Note</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="expense-tableBody">
+                            <tr id="loading-row">
+                                <td colspan="6" class="text-center text-muted">Loading expenses...</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Note Modal -->
+                <div class="modal fade" id="noteModal" tabindex="-1" aria-labelledby="noteModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="noteModalLabel">Note</h5>
+                                <div>
+                                    <!-- <i class="bi bi-pencil-square text-success" style="cursor:pointer;"
+                                        onclick="handleEditExpenseNote(event)"  title="Edit Note"></i> -->
+                                    &nbsp;
+                                    <i class="bi bi-trash3-fill text-danger" style="cursor:pointer;"
+                                        onclick="handleRemoveExpenseNote(event)" title="Delete Note"></i>
+
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                            </div>
+                            <div class="modal-body" id="noteModalBody">
+                                <!-- Note content will be injected here -->
+                                 <div   onclick="handleEditExpenseNote(event)" id="editableNote" contenteditable="true" style="border: 1px solid #ccc; padding: 10px; min-height: 80px;">helloooo</div>
+                                   <small class="text-muted">Max 150 characters</small>
+
+                                </div>
+                            <div class="modal-footer">
+                                <button id="saveNoteBtn" class="btn btn-success d-none" >💾 Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+    </div>
+
+    <!-- 📥 Footer -->
+    <footer class="bg-dark text-light py-4 mt-5"
+        style="background: linear-gradient(90deg, #FDB813, #FFA500); padding: 20px;">
+        <div class="container">
+            <div class="row gy-3">
+
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Expense Management System</h5>
+                    <p>Your smart partner to track and manage expenses efficiently. Stay organized and save more!</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: <a href="mailto:support@expensestrack.com"
+                                class="text-dark text-decoration-none">support@expensestrack.com</a></li>
+                        <li>Phone: <a href="tel:+1234567890" class="text-dark text-decoration-none">+1 234 567 890</a>
+                        </li>
+                        <li>Address: 123 Finance St., Money City</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Follow Us</h5>
+                    <a href="#" class="text-warning fs-4 me-3" aria-label="Facebook"
+                        style="text-decoration:none;">📘</a>
+                    <a href="#" class="text-warning fs-4 me-3" aria-label="Twitter" style="text-decoration:none;">🐦</a>
+                    <a href="#" class="text-warning fs-4 me-3" aria-label="LinkedIn"
+                        style="text-decoration:none;">🔗</a>
+                </div>
+
+            </div>
+
+            <hr class="bg-secondary my-4">
+
+            <p class="text-center mb-0 small">&copy; 2025 Expense Management System. Made with ☀️ by You.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Logout function -->
+    <script src="AllExpenses.js"></script>
+    <script src="AddExpensesNote.js"></script>
+    <script src="EditExpenses.js"></script>
+    <script src="EditExpenseNote.js"></script>
+    <script src="RemoveExpenses.js"></script>
+    <script src="Logout.js"></script>
+
+</body>
+
+</html>
